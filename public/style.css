@@ -1,12 +1,113 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #000;
+    margin: 0; /* Réinitialiser la marge */
+    padding: 0; /* Réinitialiser le rembourrage */
+    background-image: url('images/homepage.png'); 
+    background-size: cover; 
+
+    
 }
+
+/* Début CSS main page */
+.choose{
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.cards{
+    margin-top:100px ;
+    padding-left: 150px;
+    padding-right: 150px;
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+.card img{
+    max-width: 100px;
+    margin-bottom: 10px;
+
+}
+
+.snakecard{
+    width: 200px;
+    border: 5px solid #436200;
+    background-color: #86AC34;
+    border-radius: 30px ;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 120px;
+    color: #fff;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+
+
+
+}
+
+.snakecard p{
+    font-size: 30px;
+}
+
+.snakeplaybutton{
+    background-color: #ededed;
+    color: #fff;
+    border: 2px solid #D6D6D6;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+
+.xocard{
+    width: 200px;
+    border: 5px solid #D6D6D6;
+    background-color: #1A4241;
+    border-radius: 30px ;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 120px;
+    color: #fff;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+
+
+
+}
+
+.xocard p{
+    font-size: 30px;
+}
+.xoplaybutton{
+    background-color: #ededed;
+    color: #fff;
+    border: 2px solid #D6D6D6;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* ----------- Fin CSS main page ----------- */
+
+
+
+/* -----------Début CSS snake page ----------- */
+
+/*snake game*/
+
 
 form {
     margin-bottom: 20px;
@@ -46,4 +147,22 @@ canvas {
 #chatForm button {
     padding: 5px;
 }
+
+/*snake game*/
+
+/* -----------Fin CSS snake page ----------- */
+
+
+
+/* -----------Début CSS xo page ----------- */
+/* -----------Fin CSS xo page ----------- */
+
+
+/* -----------Début CSS snake playground page ----------- */
+/* -----------Fin CSS snake playground page ----------- */
+
+/* -----------Début CSS xo playground page ----------- */
+/* -----------Fin CSS xo playground page ----------- */
+
+
 

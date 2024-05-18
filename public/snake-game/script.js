@@ -2,8 +2,8 @@ const socket = io();
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const messages = document.getElementById('messages');
-// const chatForm = document.getElementById('chatForm');
-// const chatInput = document.getElementById('chatInput');
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
 
 canvas.width = 800;
 canvas.height = 600;
@@ -94,6 +94,15 @@ document.addEventListener('keydown', (event) => {
         socket.emit('playerMovement', { direction });
     }
 });
+
+chatForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (chatInput.value) {
+        socket.emit('chatMessage', chatInput.value);
+        chatInput.value = '';
+    }
+});
+
 
 function drawGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
