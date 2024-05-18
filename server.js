@@ -67,15 +67,24 @@ function updateGame(room) {
     Object.keys(roomData.players).forEach((playerId) => {
         const player = roomData.players[playerId];
         moveSnake(player);
+        if (checkBoundaryCollision(player)) {
+            io.to(room).emit('playerLost', player.id);
+            delete rooms[room].players[player.id];
+        }
+    });
 
-        roomData.apples.forEach((apple, index) => {
+    roomData.apples.forEach((apple, index) => {
+        Object.keys(roomData.players).forEach((playerId) => {
+            const player = roomData.players[playerId];
             if (isEatingApple(player.snake[0], apple)) {
-                player.snake.push({});
+                player.snake.push({...player.snake[player.snake.length - 1]});
                 roomData.apples[index] = generateApple();
                 io.to(room).emit('appleLocation', roomData.apples);
             }
         });
     });
+
+    checkSnakeCollision(room);
 
     io.to(room).emit('updatePlayers', roomData.players);
 }
@@ -120,6 +129,45 @@ function generateApples(count = 3) {
     }
     return apples;
 }
+
+function checkBoundaryCollision(player) {
+    const head = player.snake[0];
+    return head.x < 0 || head.x >= 40 || head.y < 0 || head.y >= 30;
+}
+
+function checkSnakeCollision(room) {
+    const roomData = rooms[room];
+    const playerIds = Object.keys(roomData.players);
+
+    playerIds.forEach(playerId => {
+        const currentPlayer = roomData.players[playerId];
+        const currentHead = currentPlayer.snake[0];
+
+        console.log(`Checking collisions for player ${playerId} at position (${currentHead.x}, ${currentHead.y})`);
+
+        playerIds.forEach(otherPlayerId => {
+            if (playerId !== otherPlayerId) {
+                const otherPlayer = roomData.players[otherPlayerId];
+
+                otherPlayer.snake.forEach(segment => {
+                    console.log(`Comparing with segment of player ${otherPlayerId} at position (${segment.x}, ${segment.y})`);
+                    if (currentHead.x === segment.x && currentHead.y === segment.y) {
+                        console.log(`Collision detected between player ${playerId} and player ${otherPlayerId}`);
+                        if (currentPlayer.snake.length <= otherPlayer.snake.length) {
+                            io.to(room).emit('playerLost', playerId);
+                            delete rooms[room].players[playerId];
+                        } else {
+                            io.to(room).emit('playerLost', otherPlayerId);
+                            delete rooms[room].players[otherPlayerId];
+                        }
+                    }
+                });
+            }
+        });
+    });
+}
+
+
 
 setInterval(() => {
     Object.keys(rooms).forEach((room) => {
