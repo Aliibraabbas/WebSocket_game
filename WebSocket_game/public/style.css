@@ -1,0 +1,193 @@
+body {
+    margin: 0; /* Réinitialiser la marge */
+    padding: 0; /* Réinitialiser le rembourrage */
+    background-image: url('images/homepage.png'); 
+    background-size: cover; 
+}
+
+/* Début CSS main page */
+.choose{
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #fff;
+
+}
+
+
+
+.cards{
+    margin-top:100px ;
+    padding-left: 150px;
+    padding-right: 150px;
+    display: flex;
+    justify-content:space-evenly;
+    
+}
+.cards img{
+    max-width: 200px;
+    margin-bottom: 10px;
+
+}
+
+.snakecard{
+    width: 200px;
+    border: 5px solid #436200;
+    background-color: #86AC34;
+    border-radius: 30px ;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+    color: #fff;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-right: 100px;
+
+    flex: 1 1 300px; /* La div prendra au moins 300px et s'étendra si possible */
+    max-width: 300px;
+    padding: 20px;
+    transition: flex 0.3s;
+
+}
+
+button.snakeplaybutton a {
+    color: white;
+    text-decoration: none; /* Enlève la ligne du lien */
+    font-family: monospace;
+
+}
+
+.snakecard p{
+    font-size: 30px;
+}
+
+.snakeplaybutton{
+    background-color: #436200;
+    color: #fff;
+    border: 2px solid #D6D6D6;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+.tttcard{
+    width: 200px;
+    border: 5px solid #D6D6D6;
+    background-color: #1A4241;
+    border-radius: 30px ;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+    color: #fff;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-left: 100px;
+
+    flex: 1 1 300px; /* La div prendra au moins 300px et s'étendra si possible */
+    max-width: 300px;
+    padding: 20px;
+    transition: flex 0.3s;
+}
+
+button.tttplaybutton a {
+    color: white;
+    text-decoration: none; /* Enlève la ligne du lien */
+    
+
+}
+
+.tttcard p{
+    font-size: 30px;
+}
+.tttplaybutton{
+    background-color: #0C201F;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family: monospace;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* ----------- Fin CSS main page ----------- */
+
+
+
+/* -----------Début CSS snake page ----------- */
+
+/*snake game*/
+
+
+form {
+    margin-bottom: 20px;
+}
+
+canvas {
+    border: 1px solid #fff;
+    margin-top: 100px;
+}
+
+#chatContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+#messages {
+    height: 150px;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+#chatForm {
+    display: flex;
+    width: 100%;
+}
+
+#chatInput {
+    flex: 1;
+    padding: 5px;
+}
+
+#chatForm button {
+    padding: 5px;
+}
+
+/*snake game*/
+
+/* -----------Fin CSS snake page ----------- */
+
+
+
+/* -----------Début CSS xo page ----------- */
+/* -----------Fin CSS xo page ----------- */
+
+
+/* -----------Début CSS snake playground page ----------- */
+/* -----------Fin CSS snake playground page ----------- */
+
+/* -----------Début CSS xo playground page ----------- */
+/* -----------Fin CSS xo playground page ----------- */
+
+
+
