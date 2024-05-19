@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    background-image: url('../images/board.png');
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #AC712F;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    width: 310px;
+    background-color: #fff;
+    border: 2px solid #AC712F;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #333;
+    background-color: #e7e7e7;
+    border: 2px solid #AC712F;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #d4d4d4;
+}
+
+#messages {
+    margin: 20px auto;
+    width: 310px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #AC712F;
+    border: 2px solid #AC712F;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+form {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#roomInput {
+    padding: 10px;
+    border: 2px solid #AC712F;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+form button, #restartButton {
+    padding: 10px 20px;
+    border: 2px solid #AC712F;
+    border-radius: 5px;
+    background-color: #AC712F;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover, #restartButton:hover {
+    background-color: #944f24;
+}

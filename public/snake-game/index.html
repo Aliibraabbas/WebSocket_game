@@ -7,72 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
-    
-    <form id="joinRoomForm">
-        <input type="text" id="roomInput" placeholder="Enter room name">
-        <button type="submit">Join Room</button>
-    </form>
-
-    <div id="chatContainer">
-        <div id="messages"></div>
-        <form id="chatForm">
-            <input type="text" id="chatInput" placeholder="Type a message">
-            <button type="submit">Send</button>
-        </form>
+    <div id="mainContainer">
+        <canvas id="gameCanvas"></canvas>
+        <div id="sideContainer">
+            <form id="joinRoomForm">
+                <input type="text" id="roomInput" placeholder="Enter room name">
+                <button type="submit">Join Room</button>
+            </form>
+            <div id="chatContainer">
+                <div id="messages"></div>
+                <form id="chatForm">
+                    <input type="text" id="chatInput" placeholder="Type a message">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="../socket.io/socket.io.js"></script>
     <script src="script.js"></script>
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const socket = io();
-            const joinRoomForm = document.getElementById("joinRoomForm");
-            const roomInput = document.getElementById("room");
-
-            joinRoomForm.addEventListener("submit", (event) => {
-                event.preventDefault();
-                const room = roomInput.value;
-                if (room) {
-                    socket.emit("joinRoom", room);
-                }
-            });
-
-            socket.on("connect", () => {
-                console.log("Connected to server");
-            });
-
-            socket.on("disconnect", () => {
-                console.log("Disconnected from server");
-            });
-
-            socket.on("currentPlayers", (players) => {
-                console.log("Current players:", players);
-            });
-
-            socket.on("newPlayer", (player) => {
-                console.log("New player joined:", player);
-            });
-
-            socket.on("playerDisconnected", (playerId) => {
-                console.log("Player disconnected:", playerId);
-            });
-
-            socket.on("updatePlayers", (players) => {
-                console.log("Players updated:", players);
-            });
-
-            socket.on("appleLocation", (apples) => {
-                console.log("Apple locations:", apples);
-            });
-
-            socket.on("playerLost", (playerId) => {
-                console.log("Player lost:", playerId);
-            });
-
-            socket.on("chatMessage", (message) => {
-                console.log("Chat message:", message);
-            });
-        });
-    </script> -->
 </body>
 </html>
