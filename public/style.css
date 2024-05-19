@@ -3,27 +3,28 @@ body {
     padding: 0; /* Réinitialiser le rembourrage */
     background-image: url('images/homepage.png'); 
     background-size: cover; 
-
-    
 }
 
 /* Début CSS main page */
 .choose{
     text-align: center;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #fff;
+
 }
+
+
 
 .cards{
     margin-top:100px ;
     padding-left: 150px;
     padding-right: 150px;
     display: flex;
-    justify-content: space-between;
-
+    justify-content:space-evenly;
     
 }
-.card img{
-    max-width: 100px;
+.cards img{
+    max-width: 200px;
     margin-bottom: 10px;
 
 }
@@ -35,12 +36,23 @@ body {
     border-radius: 30px ;
     padding-left: 100px;
     padding-right: 100px;
-    padding-bottom: 120px;
+    padding-bottom: 30px;
     color: #fff;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
+    margin-right: 100px;
 
+    flex: 1 1 300px; /* La div prendra au moins 300px et s'étendra si possible */
+    max-width: 300px;
+    padding: 20px;
+    transition: flex 0.3s;
 
+}
+
+button.snakeplaybutton a {
+    color: white;
+    text-decoration: none; /* Enlève la ligne du lien */
+    font-family: monospace;
 
 }
 
@@ -49,7 +61,7 @@ body {
 }
 
 .snakeplaybutton{
-    background-color: #ededed;
+    background-color: #436200;
     color: #fff;
     border: 2px solid #D6D6D6;
     border-radius: 30px;
@@ -62,32 +74,45 @@ body {
 }
 
 
-.xocard{
+
+
+
+
+.tttcard{
     width: 200px;
     border: 5px solid #D6D6D6;
     background-color: #1A4241;
     border-radius: 30px ;
     padding-left: 100px;
     padding-right: 100px;
-    padding-bottom: 120px;
+    padding-bottom: 30px;
     color: #fff;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
+    margin-left: 100px;
 
+    flex: 1 1 300px; /* La div prendra au moins 300px et s'étendra si possible */
+    max-width: 300px;
+    padding: 20px;
+    transition: flex 0.3s;
+}
 
+button.tttplaybutton a {
+    color: white;
+    text-decoration: none; /* Enlève la ligne du lien */
+    
 
 }
 
-.xocard p{
+.tttcard p{
     font-size: 30px;
 }
-.xoplaybutton{
-    background-color: #ededed;
+.tttplaybutton{
+    background-color: #0C201F;
     color: #fff;
-    border: 2px solid #D6D6D6;
     border-radius: 30px;
     padding: 10px 20px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: monospace;
     font-size: 20px;
     cursor: pointer;
     margin-top: 20px;
